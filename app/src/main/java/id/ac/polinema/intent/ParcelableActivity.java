@@ -9,11 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import model.User;
 
-import static id.ac.polinema.intent.BundleActivity.AGE_KEY;
-import static id.ac.polinema.intent.BundleActivity.NAME_KEY;
-import static id.ac.polinema.intent.BundleActivity.USERNAME_KEY;
 
 public class ParcelableActivity extends AppCompatActivity {
+    public static final String USER_KEY = "User";
     private EditText username;
     private EditText name;
     private EditText age;
@@ -35,7 +33,7 @@ public class ParcelableActivity extends AppCompatActivity {
         User user = new User (username1, name1, age1);
 
         Intent intent = new Intent (this, ProfileParcelableActivity.class);
-        intent.putExtra("user", user);
+        intent.putExtra(USER_KEY, user);
         startActivity(intent);
     }
 }
